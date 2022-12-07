@@ -1,5 +1,5 @@
 import pyglet.shapes
-from math import *
+from math import cos, sin, radians
 
 
 class Car:

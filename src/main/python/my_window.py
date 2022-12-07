@@ -25,11 +25,7 @@ class MyWindow(pyglet.window.Window):
             self.game.car.rotating = -5
 
     def on_key_release(self, symbol, modifiers):
-        if symbol == pyglet.window.key.UP:
+        if symbol == pyglet.window.key.UP or symbol == pyglet.window.key.DOWN:
             self.game.car.vel = 0
-        elif symbol == pyglet.window.key.DOWN:
-            self.game.car.vel = 0
-        if symbol == pyglet.window.key.RIGHT:
-            self.game.car.rotating = 0
-        elif symbol == pyglet.window.key.LEFT:
+        if symbol == pyglet.window.key.RIGHT or symbol == pyglet.window.key.LEFT:
             self.game.car.rotating = 0
