@@ -37,6 +37,8 @@ I am using PyBuilder to build this project
 
 ## Continuous Delivery
 
+I am trying to use Travis CI for the continuous integration
+
 ## IDE
 
 For this project and most of my project in Python I use PyCharm. This IDE is made specifically for Python project and is easy to handle. Almost every feature is intuitive and thanks to the different sub-windows, it is easy to navigate between the code, the directories, the run windows, etc.
