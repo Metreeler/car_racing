@@ -37,6 +37,12 @@ In order to get some metrics for this project I used SonarCloud which is an onli
 
 ## IDE
 
+For this project and most of my project in Python I use PyCharm. This IDE is made specifically for Python project and is easy to handle. Almost every feature is intuitive and thanks to the different sub-windows, it is easy to navigate between the code, the directories, the run windows, etc.
+
+This IDE also analyze the code in real time to tell whether there are errors or warning in the code, so you don't have to run it and patch all the errors one by one.
+
+Pycharm also have an integrated Git interface, which is really intuitive. However, out of habit I still use command lines and a command window.
+
 ## DSL
 
 ## Functional Programming
