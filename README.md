@@ -5,6 +5,9 @@ This project is a simple 2D car game. The goal is to have a `Map Creator` interf
 ---
 ## Use and understand Git
 
+For this project, I am using GitHub. The IDE I am using allows me to execute the main Git commands (pull, add, commit, push). 
+However, I might be a bit old-fashioned as I still write the command lines directly in a command window
+
 ## UML
 
 Attached to this project are three UML diagrams : 
