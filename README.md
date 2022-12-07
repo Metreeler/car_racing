@@ -37,7 +37,12 @@ I am using PyBuilder to build this project
 
 ## Continuous Delivery
 
-I am trying to use Travis CI for the continuous integration
+The continuous delivery of my project is handled by Travis CI. 
+This software allows me to build the project each time I push a new commit, using the combination of PyBuilder and Travis CI.
+
+The status of the build is available here :
+
+[![Build Status](https://app.travis-ci.com/Metreeler/car_racing.svg?branch=main)](https://app.travis-ci.com/Metreeler/car_racing)
 
 ## IDE
 
