@@ -15,6 +15,18 @@ Attached to this project are three UML diagrams :
 
 ## Metrics
 
+In order to get some metrics for this project I used SonarCloud which is an online version on SonarQube. SonarQube is a tool to get the metrics of a project such as number of bugs, technical debt, lines of code, etc. SonarCloud allows me to get different metrics and to display the up-to-date version of these metrics thanks to badges.
+
+- lines of code : [![Lines of Code](https://sonarcloud.io/api/project_badges/measure?project=Metreeler_car_racing&metric=ncloc)](https://sonarcloud.io/summary/new_code?id=Metreeler_car_racing)
+- code smells : [![Code Smells](https://sonarcloud.io/api/project_badges/measure?project=Metreeler_car_racing&metric=code_smells)](https://sonarcloud.io/summary/new_code?id=Metreeler_car_racing)
+- maintainability : [![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?project=Metreeler_car_racing&metric=sqale_rating)](https://sonarcloud.io/summary/new_code?id=Metreeler_car_racing)
+- security rating : [![Security Rating](https://sonarcloud.io/api/project_badges/measure?project=Metreeler_car_racing&metric=security_rating)](https://sonarcloud.io/summary/new_code?id=Metreeler_car_racing)
+- bugs : [![Bugs](https://sonarcloud.io/api/project_badges/measure?project=Metreeler_car_racing&metric=bugs)](https://sonarcloud.io/summary/new_code?id=Metreeler_car_racing)
+- vulnerabilities : [![Vulnerabilities](https://sonarcloud.io/api/project_badges/measure?project=Metreeler_car_racing&metric=vulnerabilities)](https://sonarcloud.io/summary/new_code?id=Metreeler_car_racing)
+- duplicated lines : [![Duplicated Lines (%)](https://sonarcloud.io/api/project_badges/measure?project=Metreeler_car_racing&metric=duplicated_lines_density)](https://sonarcloud.io/summary/new_code?id=Metreeler_car_racing)
+- reliability rating : [![Reliability Rating](https://sonarcloud.io/api/project_badges/measure?project=Metreeler_car_racing&metric=reliability_rating)](https://sonarcloud.io/summary/new_code?id=Metreeler_car_racing)
+- technical debt : [![Technical Debt](https://sonarcloud.io/api/project_badges/measure?project=Metreeler_car_racing&metric=sqale_index)](https://sonarcloud.io/summary/new_code?id=Metreeler_car_racing)
+
 ## Clean Code Development
 
 ## Build Management
