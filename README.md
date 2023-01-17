@@ -40,6 +40,7 @@ I am using PyBuilder to build this project
 
 ## Continuous Delivery
 
+There is a problem with travis
 The continuous delivery of my project is handled by Travis CI. 
 This software allows me to build the project each time I push a new commit, using the combination of PyBuilder and Travis CI.
 
