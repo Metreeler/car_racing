@@ -29,7 +29,7 @@ class MyWindow(pyglet.window.Window):
         if self.editing:
             self.editor.update()
         else:
-            self.game.update(self.get_size())
+            self.game.update()
 
     def on_key_press(self, symbol, modifiers):
         if self.editing:
@@ -61,23 +61,33 @@ class MyWindow(pyglet.window.Window):
                 if symbol == pyglet.window.key.ENTER:
                     self.editor.save()
         else:
-            if symbol == pyglet.window.key.UP:
-                self.game.car.vel = 10
-            elif symbol == pyglet.window.key.DOWN:
-                self.game.car.vel = -5
             if symbol == pyglet.window.key.RIGHT:
-                self.game.car.rotating = 5
-            elif symbol == pyglet.window.key.LEFT:
-                self.game.car.rotating = -5
+                self.game.car.turningRight = True
+            if symbol == pyglet.window.key.LEFT:
+                self.game.car.turningLeft = True
+            if symbol == pyglet.window.key.UP:
+                self.game.car.accelerating = True
+            if symbol == pyglet.window.key.DOWN:
+                self.game.car.reversing = True
+            if symbol == pyglet.window.key.SPACE:
+                self.game.car.stop = True
+            if symbol == pyglet.window.key.R:
+                self.game.car.reset()
 
     def on_key_release(self, symbol, modifiers):
         if self.editing:
             pass
         else:
-            if symbol == pyglet.window.key.UP or symbol == pyglet.window.key.DOWN:
-                self.game.car.vel = 0
-            if symbol == pyglet.window.key.RIGHT or symbol == pyglet.window.key.LEFT:
-                self.game.car.rotating = 0
+            if symbol == pyglet.window.key.RIGHT:
+                self.game.car.turningRight = False
+            if symbol == pyglet.window.key.LEFT:
+                self.game.car.turningLeft = False
+            if symbol == pyglet.window.key.UP:
+                self.game.car.accelerating = False
+            if symbol == pyglet.window.key.DOWN:
+                self.game.car.reversing = False
+            if symbol == pyglet.window.key.SPACE:
+                self.game.car.stop = False
 
     def on_mouse_press(self, x, y, button, modifiers):
         if self.editing:

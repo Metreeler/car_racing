@@ -14,3 +14,13 @@ def linesCollided(x1, y1, x2, y2, x3, y3, x4, y4):
         if 0 <= uA <= 1 and 0 <= uB <= 1:
             return True
     return False
+
+
+def get_angle(vec):
+    if vec.length() == 0:
+        return 0
+    return math.degrees(math.atan2(vec.y, vec.x))
+
+
+def radiansToAngle(rads):
+    return rads * 180 / math.pi

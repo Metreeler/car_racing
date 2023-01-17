@@ -10,7 +10,7 @@ class Game:
         self.car_position = (0, 0)
         self.load_map(map_name)
 
-        self.car = Car(self.car_position)
+        self.car = Car(self.car_position, self.wallList, self.gateList)
 
     def show(self):
         self.car.show()
@@ -19,7 +19,7 @@ class Game:
         for g in self.gateList:
             g.show()
 
-    def update(self, size):
+    def update(self):
         self.car.update()
 
     def load_map(self, map_name):
