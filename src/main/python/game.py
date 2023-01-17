@@ -1,145 +1,18 @@
-import pyglet
 from car import Car
 from wall import Wall
 from gate import Gate
 
 
 class Game:
-    def __init__(self, size):
-        (self.window_width, self.window_height) = size
-        self.background = pyglet.shapes.Rectangle(0, 0, self.window_width, self.window_height, color=[200, 200, 200])
+    def __init__(self, map_name):
         self.wallList = []
         self.gateList = []
+        self.car_position = (0, 0)
+        self.load_map(map_name)
 
-        self.wallList.append(Wall(457.0, 651.0, 610.0, 654.0))
-        self.wallList.append(Wall(610.0, 654.0, 853.0, 649.0))
-        self.wallList.append(Wall(853.0, 649.0, 902.0, 638.0))
-        self.wallList.append(Wall(902.0, 638.0, 941.0, 610.0))
-        self.wallList.append(Wall(941.0, 610.0, 959.0, 565.0))
-        self.wallList.append(Wall(959.0, 565.0, 951.0, 509.0))
-        self.wallList.append(Wall(951.0, 509.0, 918.0, 486.0))
-        self.wallList.append(Wall(918.0, 486.0, 845.0, 474.0))
-        self.wallList.append(Wall(845.0, 474.0, 782.0, 463.0))
-        self.wallList.append(Wall(782.0, 463.0, 757.0, 435.0))
-        self.wallList.append(Wall(757.0, 435.0, 778.0, 382.0))
-        self.wallList.append(Wall(778.0, 382.0, 831.0, 360.0))
-        self.wallList.append(Wall(831.0, 360.0, 900.0, 349.0))
-        self.wallList.append(Wall(900.0, 349.0, 956.0, 306.0))
-        self.wallList.append(Wall(956.0, 306.0, 956.0, 229.0))
-        self.wallList.append(Wall(956.0, 229.0, 923.0, 189.0))
-        self.wallList.append(Wall(923.0, 189.0, 848.0, 137.0))
-        self.wallList.append(Wall(848.0, 137.0, 719.0, 91.0))
-        self.wallList.append(Wall(719.0, 91.0, 560.0, 74.0))
-        self.wallList.append(Wall(560.0, 74.0, 429.0, 95.0))
-        self.wallList.append(Wall(429.0, 95.0, 309.0, 137.0))
-        self.wallList.append(Wall(309.0, 137.0, 274.0, 222.0))
-        self.wallList.append(Wall(274.0, 222.0, 255.0, 130.0))
-        self.wallList.append(Wall(255.0, 130.0, 227.0, 83.0))
-        self.wallList.append(Wall(227.0, 83.0, 156.0, 48.0))
-        self.wallList.append(Wall(156.0, 48.0, 78.0, 91.0))
-        self.wallList.append(Wall(78.0, 91.0, 49.0, 219.0))
-        self.wallList.append(Wall(49.0, 219.0, 49.0, 367.0))
-        self.wallList.append(Wall(49.0, 367.0, 51.0, 563.0))
-        self.wallList.append(Wall(51.0, 563.0, 61.0, 597.0))
-        self.wallList.append(Wall(61.0, 597.0, 83.0, 620.0))
-        self.wallList.append(Wall(83.0, 620.0, 131.0, 634.0))
-        self.wallList.append(Wall(131.0, 634.0, 311.0, 643.0))
-        self.wallList.append(Wall(311.0, 643.0, 457.0, 651.0))
-        self.wallList.append(Wall(334.0, 574.0, 750.0, 594.0))
-        self.wallList.append(Wall(750.0, 594.0, 815.0, 596.0))
-        self.wallList.append(Wall(815.0, 596.0, 841.0, 592.0))
-        self.wallList.append(Wall(841.0, 592.0, 852.0, 575.0))
-        self.wallList.append(Wall(852.0, 575.0, 854.0, 548.0))
-        self.wallList.append(Wall(854.0, 548.0, 845.0, 526.0))
-        self.wallList.append(Wall(845.0, 526.0, 818.0, 514.0))
-        self.wallList.append(Wall(818.0, 514.0, 775.0, 498.0))
-        self.wallList.append(Wall(775.0, 498.0, 738.0, 490.0))
-        self.wallList.append(Wall(738.0, 490.0, 702.0, 464.0))
-        self.wallList.append(Wall(702.0, 464.0, 693.0, 414.0))
-        self.wallList.append(Wall(693.0, 414.0, 718.0, 375.0))
-        self.wallList.append(Wall(718.0, 375.0, 753.0, 351.0))
-        self.wallList.append(Wall(753.0, 351.0, 803.0, 327.0))
-        self.wallList.append(Wall(803.0, 327.0, 834.0, 314.0))
-        self.wallList.append(Wall(834.0, 314.0, 869.0, 288.0))
-        self.wallList.append(Wall(869.0, 288.0, 869.0, 264.0))
-        self.wallList.append(Wall(869.0, 264.0, 852.0, 231.0))
-        self.wallList.append(Wall(852.0, 231.0, 775.0, 197.0))
-        self.wallList.append(Wall(775.0, 197.0, 703.0, 165.0))
-        self.wallList.append(Wall(703.0, 165.0, 605.0, 150.0))
-        self.wallList.append(Wall(605.0, 150.0, 507.0, 155.0))
-        self.wallList.append(Wall(507.0, 155.0, 396.0, 175.0))
-        self.wallList.append(Wall(396.0, 175.0, 373.0, 189.0))
-        self.wallList.append(Wall(373.0, 189.0, 350.0, 232.0))
-        self.wallList.append(Wall(350.0, 232.0, 344.0, 257.0))
-        self.wallList.append(Wall(344.0, 257.0, 349.0, 295.0))
-        self.wallList.append(Wall(349.0, 295.0, 340.0, 323.0))
-        self.wallList.append(Wall(340.0, 323.0, 310.0, 350.0))
-        self.wallList.append(Wall(310.0, 350.0, 257.0, 347.0))
-        self.wallList.append(Wall(257.0, 347.0, 209.0, 322.0))
-        self.wallList.append(Wall(209.0, 322.0, 193.0, 280.0))
-        self.wallList.append(Wall(193.0, 280.0, 200.0, 221.0))
-        self.wallList.append(Wall(200.0, 221.0, 198.0, 177.0))
-        self.wallList.append(Wall(198.0, 177.0, 182.0, 157.0))
-        self.wallList.append(Wall(182.0, 157.0, 164.0, 149.0))
-        self.wallList.append(Wall(164.0, 149.0, 146.0, 154.0))
-        self.wallList.append(Wall(146.0, 154.0, 128.0, 173.0))
-        self.wallList.append(Wall(128.0, 173.0, 115.0, 229.0))
-        self.wallList.append(Wall(115.0, 229.0, 116.0, 510.0))
-        self.wallList.append(Wall(116.0, 510.0, 120.0, 526.0))
-        self.wallList.append(Wall(120.0, 526.0, 132.0, 542.0))
-        self.wallList.append(Wall(132.0, 542.0, 179.0, 560.0))
-        self.wallList.append(Wall(179.0, 560.0, 256.0, 571.0))
-        self.wallList.append(Wall(256.0, 571.0, 334.0, 574.0))
-
-        self.gateList.append(Gate(575.0, 675.0, 578.0, 571.0))
-        self.gateList.append(Gate(663.0, 670.0, 662.0, 567.0))
-        self.gateList.append(Gate(763.0, 665.0, 760.0, 576.0))
-        self.gateList.append(Gate(851.0, 664.0, 831.0, 582.0))
-        self.gateList.append(Gate(934.0, 632.0, 835.0, 574.0))
-        self.gateList.append(Gate(970.0, 580.0, 842.0, 562.0))
-        self.gateList.append(Gate(944.0, 497.0, 840.0, 539.0))
-        self.gateList.append(Gate(876.0, 475.0, 840.0, 529.0))
-        self.gateList.append(Gate(818.0, 465.0, 798.0, 518.0))
-        self.gateList.append(Gate(788.0, 459.0, 772.0, 510.0))
-        self.gateList.append(Gate(773.0, 441.0, 712.0, 488.0))
-        self.gateList.append(Gate(775.0, 421.0, 680.0, 438.0))
-        self.gateList.append(Gate(779.0, 404.0, 702.0, 375.0))
-        self.gateList.append(Gate(805.0, 389.0, 756.0, 337.0))
-        self.gateList.append(Gate(863.0, 369.0, 795.0, 317.0))
-        self.gateList.append(Gate(948.0, 333.0, 835.0, 301.0))
-        self.gateList.append(Gate(966.0, 270.0, 854.0, 271.0))
-        self.gateList.append(Gate(925.0, 175.0, 847.0, 249.0))
-        self.gateList.append(Gate(843.0, 131.0, 779.0, 213.0))
-        self.gateList.append(Gate(740.0, 92.0, 716.0, 183.0))
-        self.gateList.append(Gate(625.0, 75.0, 619.0, 163.0))
-        self.gateList.append(Gate(525.0, 75.0, 533.0, 169.0))
-        self.gateList.append(Gate(412.0, 94.0, 450.0, 176.0))
-        self.gateList.append(Gate(338.0, 120.0, 394.0, 184.0))
-        self.gateList.append(Gate(289.0, 163.0, 368.0, 210.0))
-        self.gateList.append(Gate(276.0, 207.0, 361.0, 242.0))
-        self.gateList.append(Gate(275.0, 205.0, 244.0, 354.0))
-        self.gateList.append(Gate(276.0, 208.0, 352.0, 310.0))
-        self.gateList.append(Gate(274.0, 203.0, 322.0, 354.0))
-        self.gateList.append(Gate(274.0, 208.0, 194.0, 311.0))
-        self.gateList.append(Gate(275.0, 209.0, 193.0, 229.0))
-        self.gateList.append(Gate(267.0, 137.0, 185.0, 185.0))
-        self.gateList.append(Gate(202.0, 62.0, 163.0, 166.0))
-        self.gateList.append(Gate(103.0, 61.0, 154.0, 167.0))
-        self.gateList.append(Gate(53.0, 154.0, 132.0, 188.0))
-        self.gateList.append(Gate(35.0, 268.0, 118.0, 274.0))
-        self.gateList.append(Gate(40.0, 357.0, 122.0, 358.0))
-        self.gateList.append(Gate(41.0, 453.0, 123.0, 452.0))
-        self.gateList.append(Gate(40.0, 532.0, 134.0, 511.0))
-        self.gateList.append(Gate(72.0, 631.0, 139.0, 528.0))
-        self.gateList.append(Gate(159.0, 648.0, 162.0, 530.0))
-        self.gateList.append(Gate(243.0, 652.0, 250.0, 552.0))
-        self.gateList.append(Gate(367.0, 658.0, 372.0, 551.0))
-        self.gateList.append(Gate(470.0, 664.0, 476.0, 557.0))
-
-        self.car = Car(self.window_width / 2, self.window_height / 2)
+        self.car = Car(self.car_position)
 
     def show(self):
-        self.background.draw()
         self.car.show()
         for w in self.wallList:
             w.show()
@@ -147,7 +20,38 @@ class Game:
             g.show()
 
     def update(self, size):
-        if (self.window_width, self.window_height) != size:
-            (self.window_width, self.window_height) = size
-        self.background.width, self.background.height = self.window_width, self.window_height
         self.car.update()
+
+    def load_map(self, map_name):
+        self.wallList = []
+        wall_reading = False
+        self.gateList = []
+        gate_reading = False
+        self.car_position = (0, 0)
+        car_reading = False
+        f = open("./python/assets/" + map_name, "r")
+        for line in f:
+            line = line.split("\n")[0]
+            if line == "WALLS":
+                wall_reading = True
+                gate_reading = False
+                car_reading = False
+            elif line == "GATES":
+                gate_reading = True
+                wall_reading = False
+                car_reading = False
+            elif line == "CAR":
+                car_reading = True
+                gate_reading = False
+                wall_reading = False
+            else:
+                if wall_reading:
+                    data = line.split(",")
+                    self.wallList.append(Wall(int(data[0]), int(data[1]), int(data[2]), int(data[3])))
+                elif gate_reading:
+                    data = line.split(",")
+                    self.gateList.append(Gate(int(data[0]), int(data[1]), int(data[2]), int(data[3])))
+                elif car_reading:
+                    data = line.split(",")
+                    self.car_position = (int(data[0]), int(data[1]))
+        f.close()

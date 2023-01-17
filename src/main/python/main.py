@@ -9,10 +9,13 @@ if __name__ == "__main__":
         i = input("Do you want to play (p) or do you want to create map (m) : ")
         if i == "p":
             playing_editing = False
-            window = MyWindow(1080, 720, "Car Game", resizable=True)
+            window = MyWindow(False, 1080, 720, "Car Game", resizable=True)
             pyglet.clock.schedule_interval(window.update, 1 / frameRate)
             pyglet.app.run()
         elif i == "m":
             playing_editing = False
+            window = MyWindow(True, 1080, 720, "Car Game", resizable=True)
+            pyglet.clock.schedule_interval(window.update, 1 / frameRate)
+            pyglet.app.run()
         else:
             print(i + " is not a valid answer")

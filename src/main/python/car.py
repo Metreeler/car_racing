@@ -3,8 +3,8 @@ from math import cos, sin, radians
 
 
 class Car:
-    def __init__(self, x, y):
-        self.x, self.y = x, y
+    def __init__(self, pos):
+        (self.x, self.y) = pos
         self.vel = 0
         self.width = 12
         self.length = 30
