@@ -4,7 +4,7 @@ from editor import Editor
 
 
 class MyWindow(pyglet.window.Window):
-    def __init__(self, editing, *args, **kwargs):
+    def __init__(self, editing, map_name, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.set_minimum_size(400, 300)
         (self.window_width, self.window_height) = self.get_size()
@@ -13,7 +13,7 @@ class MyWindow(pyglet.window.Window):
         if self.editing:
             self.editor = Editor()
         else:
-            self.game = Game("map1")
+            self.game = Game(map_name)
 
     def on_draw(self):
         self.background.draw()
@@ -62,9 +62,9 @@ class MyWindow(pyglet.window.Window):
                     self.editor.save()
         else:
             if symbol == pyglet.window.key.RIGHT:
-                self.game.car.turningRight = True
+                self.game.car.turning_right = True
             if symbol == pyglet.window.key.LEFT:
-                self.game.car.turningLeft = True
+                self.game.car.turning_left = True
             if symbol == pyglet.window.key.UP:
                 self.game.car.accelerating = True
             if symbol == pyglet.window.key.DOWN:
@@ -75,13 +75,11 @@ class MyWindow(pyglet.window.Window):
                 self.game.car.reset()
 
     def on_key_release(self, symbol, modifiers):
-        if self.editing:
-            pass
-        else:
+        if not self.editing:
             if symbol == pyglet.window.key.RIGHT:
-                self.game.car.turningRight = False
+                self.game.car.turning_right = False
             if symbol == pyglet.window.key.LEFT:
-                self.game.car.turningLeft = False
+                self.game.car.turning_left = False
             if symbol == pyglet.window.key.UP:
                 self.game.car.accelerating = False
             if symbol == pyglet.window.key.DOWN:

@@ -5,31 +5,31 @@ from gate import Gate
 
 class Game:
     def __init__(self, map_name):
-        self.wallList = []
-        self.gateList = []
+        self.wall_list = []
+        self.gate_list = []
         self.car_position = (0, 0)
         self.load_map(map_name)
 
-        self.car = Car(self.car_position, self.wallList, self.gateList)
+        self.car = Car(self.car_position, self.wall_list, self.gate_list)
 
     def show(self):
         self.car.show()
-        for w in self.wallList:
+        for w in self.wall_list:
             w.show()
-        for g in self.gateList:
+        for g in self.gate_list:
             g.show()
 
     def update(self):
         self.car.update()
 
     def load_map(self, map_name):
-        self.wallList = []
+        self.wall_list = []
         wall_reading = False
-        self.gateList = []
+        self.gate_list = []
         gate_reading = False
         self.car_position = (0, 0)
         car_reading = False
-        f = open("./python/assets/" + map_name, "r")
+        f = open("./python/assets/maps/" + map_name, "r")
         for line in f:
             line = line.split("\n")[0]
             if line == "WALLS":
@@ -47,10 +47,10 @@ class Game:
             else:
                 if wall_reading:
                     data = line.split(",")
-                    self.wallList.append(Wall(int(data[0]), int(data[1]), int(data[2]), int(data[3])))
+                    self.wall_list.append(Wall(int(data[0]), int(data[1]), int(data[2]), int(data[3])))
                 elif gate_reading:
                     data = line.split(",")
-                    self.gateList.append(Gate(int(data[0]), int(data[1]), int(data[2]), int(data[3])))
+                    self.gate_list.append(Gate(int(data[0]), int(data[1]), int(data[2]), int(data[3])))
                 elif car_reading:
                     data = line.split(",")
                     self.car_position = (int(data[0]), int(data[1]))
