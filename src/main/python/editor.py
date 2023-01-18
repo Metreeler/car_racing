@@ -47,7 +47,7 @@ class Editor:
                 self.y2 = -1
                 self.start_wall_x1 = -1
                 self.start_wall_y1 = -1
-            if self.x1 != -1 and self.y1 != -1 and self.x2 != -1 and self.y2 != -1:
+            elif self.x1 != -1 and self.y1 != -1 and self.x2 != -1 and self.y2 != -1:
                 if self.start_wall_x1 == -1 and self.start_wall_y1 == -1:
                     self.start_wall_x1 = self.x1
                     self.start_wall_y1 = self.y1
@@ -56,11 +56,6 @@ class Editor:
                 self.y1 = self.y2
                 self.x2 = -1
                 self.y2 = -1
-            if self.delete_last:
-                self.wall_list = self.wall_list[:-1]
-                self.delete_last = False
-                self.x1 = self.wall_list[-1].x2
-                self.y1 = self.wall_list[-1].y2
         elif not self.gates:
             if self.x1 != -1 and self.y1 != -1 and self.x2 != -1 and self.y2 != -1:
                 self.gate_list.append(Gate(self.x1, self.y1, self.x2, self.y2))
@@ -68,11 +63,17 @@ class Editor:
                 self.y1 = -1
                 self.x2 = -1
                 self.y2 = -1
-            if self.delete_last:
-                self.gate_list = self.gate_list[:-1]
-                self.delete_last = False
         elif not self.car and self.x1 != -1 and self.y1 != -1:
             self.car_position = (self.x1, self.y1)
+
+        if self.delete_last and not self.walls:
+            self.wall_list = self.wall_list[:-1]
+            self.delete_last = False
+            self.x1 = self.wall_list[-1].x2
+            self.y1 = self.wall_list[-1].y2
+        elif self.delete_last and not self.gates:
+            self.gate_list = self.gate_list[:-1]
+            self.delete_last = False
 
     def save(self):
         map_name = input("Enter map name : ")

@@ -52,8 +52,6 @@ class MyWindow(pyglet.window.Window):
                     self.editor.y1 = -1
                     self.editor.x2 = -1
                     self.editor.y2 = -1
-                    self.editor.start_wall_x1 = -1
-                    self.editor.start_wall_y1 = -1
                     self.editor.gates = True
                 elif symbol == pyglet.window.key.BACKSPACE:
                     self.editor.delete_last = True
@@ -63,11 +61,11 @@ class MyWindow(pyglet.window.Window):
         else:
             if symbol == pyglet.window.key.RIGHT:
                 self.game.car.turning_right = True
-            if symbol == pyglet.window.key.LEFT:
+            elif symbol == pyglet.window.key.LEFT:
                 self.game.car.turning_left = True
             if symbol == pyglet.window.key.UP:
                 self.game.car.accelerating = True
-            if symbol == pyglet.window.key.DOWN:
+            elif symbol == pyglet.window.key.DOWN:
                 self.game.car.reversing = True
             if symbol == pyglet.window.key.SPACE:
                 self.game.car.stop = True
