@@ -89,4 +89,4 @@ class Editor:
         f.write("CAR\n")
         (x, y) = self.car_position
         f.write(str(x) + "," + str(y))
-        exit()
+        print("You can now close the map window to save your map")

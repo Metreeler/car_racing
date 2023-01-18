@@ -16,8 +16,8 @@ class Game:
         self.car.show()
         for w in self.wall_list:
             w.show()
-        for g in self.gate_list:
-            g.show()
+        # for g in self.gate_list:
+        #     g.show()
 
     def update(self):
         self.car.update()

@@ -1,5 +1,5 @@
 import pyglet.shapes
-from maths import get_angle, radians_to_angle
+from maths import get_angle, radians_to_angle, vec2
 
 
 class Car:
@@ -14,7 +14,7 @@ class Car:
         self.acc = 0
         self.width = 20
         self.height = 10
-        self.turning_rate = 1.0 / self.width
+        self.turning_rate = 2.0 / self.width
         self.friction = 0.98
         self.max_speed = self.width / 2.0
         self.reverse_max_speed = -1 * self.max_speed / 2.0
@@ -58,6 +58,7 @@ class Car:
         if not self.dead:
             self.update_from_keys()
             self.move()
+            self.check_gate(self.gate_count)
             for w in self.wall_list:
                 if w.hit_car(self):
                     self.dead = True
