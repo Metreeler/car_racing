@@ -11,8 +11,9 @@ However, I might be a bit old-fashioned as I still write the command lines direc
 ## UML
 
 Attached to this project are three UML diagrams : 
-1. You can find [here](https://github.com//Metreeler/car_racing/blob/main/deliverables/Activity_Diagram.png) the activity diagram of this application. We have two types of user with different interactions to this game
+1. You can find [here](https://github.com//Metreeler/car_racing/blob/main/deliverables/Activity_diagram.png) the activity diagram of this application. We have two types of user with different interactions to this game
 2. You can find [here](https://github.com//Metreeler/car_racing/blob/main/deliverables/Use_case_diagram.png) the use case diagram of this application with all the different action path for the two types of user
+3. You can find [here](https://github.com//Metreeler/car_racing/blob/main/deliverables/Class_diagram.png) the class diagram of this application, it represents how the different classes interact with each other.
 
 ## DDD
 
@@ -34,7 +35,8 @@ In order to get some metrics for this project I used SonarCloud which is an onli
 
 ## Build Management
 
-I am using PyBuilder to build this project 
+I am using PyBuilder to build this project. It's the first time that I have ever used a builder for a Python project.
+The build file is available [here](https://github.com/Metreeler/car_racing/blob/main/build.py)
 
 ## Unit Tests
 
@@ -55,6 +57,8 @@ For this project and most of my project in Python I use PyCharm. This IDE is mad
 This IDE also analyze the code in real time to tell whether there are errors or warning in the code, so you don't have to run it and patch all the errors one by one.
 
 Pycharm also have an integrated Git interface, which is really intuitive. However, out of habit I still use command lines and a command window.
+
+My favorite shortcuts in this IDE are `Ctrl + /` allowing me to comment multiple line, which is very useful whenever there is a bug in my project. Another one is `Ctrl + Tab` which allows to easily switch between the different tabs opened in the IDE.
 
 ## DSL
 
