@@ -115,9 +115,6 @@ class Car:
         if add_vector.length() != 0:
             add_vector.normalize()
 
-        add_vector.x * abs(self.vel)
-        add_vector.y * abs(self.vel)
-
         self.x += add_vector.x
         self.y += add_vector.y
 

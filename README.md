@@ -58,5 +58,12 @@ Pycharm also have an integrated Git interface, which is really intuitive. Howeve
 
 ## DSL
 
+I did the DSL part of this report as an outside part of the project. This isn't linked to the game.
+
+For this Domain Specific Language part, I used the example of a restaurant manager who wants to know how many people enter, leave, are being served,... in his restaurant. 
+In order to do that, he juste have to write in the [data.dsl](https://github.com//Metreeler/car_racing/blob/main/deliverables/DSL/data.dsl) file how many customers enter, order, receive their order, leave and are rejected.
+Then in order to get the evolution of the customers in the restaurant, he just needs to insert a line with "state" to get the current state of the restaurant.
+The DSL interpreter for this file is located [here](https://github.com//Metreeler/car_racing/blob/main/deliverables/DSL/dsl_reader.py)
+
 ## Functional Programming
 
