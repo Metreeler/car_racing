@@ -45,6 +45,10 @@ In order to build follow the following steps:
 
 ## Unit Tests
 
+In order to test a part of my code I used the unittest library of python. To demonstrate some usage of this library I tested the file [editor.py](https://github.com/Metreeler/car_racing/blob/main/src/main/python/editor.py) with the Editor class. I did the testing in this [file](https://github.com/Metreeler/car_racing/blob/main/src/unittest/python/editor_tests.py).
+
+I chose to test the `__init__()` method in order to check the good initialization of all the parameters and also the `save()` method as there is a file to save and I wanted to make sure it was well saved.
+
 ## Continuous Delivery
 
 The continuous delivery of my project is handled by Travis CI. 
