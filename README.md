@@ -36,19 +36,25 @@ In order to get some metrics for this project I used SonarCloud which is an onli
 ## Build Management
 
 I am using PyBuilder to build this project. It's the first time that I have ever used a builder for a Python project.
-The build file is available [here](https://github.com/Metreeler/car_racing/blob/main/build.py)
+The build file is available [here](https://github.com/Metreeler/car_racing/blob/main/build.py).
+In order to build follow the following steps:
+1. install pybuilder locally
+2. clone the repository
+3. open a command prompt in the `car_racing` directory
+4. execute `pyb publish`
 
 ## Unit Tests
 
 ## Continuous Delivery
 
-There is a problem with travis
 The continuous delivery of my project is handled by Travis CI. 
 This software allows me to build the project each time I push a new commit, using the combination of PyBuilder and Travis CI.
 
 The status of the build is available here :
 
 [![Build Status](https://app.travis-ci.com/Metreeler/car_racing.svg?branch=main)](https://app.travis-ci.com/Metreeler/car_racing)
+
+There is now a problem with Travis CI as I don't have anymore credit available. However, we can see on this [commit](https://github.com/Metreeler/car_racing/commit/2160191bc8b6c137fc5b412a916d00dcdae88875) that the Travis CI build was successful on the build.
 
 ## IDE
 

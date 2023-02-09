@@ -1,6 +1,6 @@
 import pyglet
 from os import listdir
-from my_window import MyWindow
+from src.main.python.my_window import MyWindow
 
 frame_rate = 60.0
 playing_editing = True

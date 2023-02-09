@@ -1,5 +1,5 @@
-from wall import Wall
-from gate import Gate
+from src.main.python.wall import Wall
+from src.main.python.gate import Gate
 import pyglet.graphics
 
 
@@ -77,9 +77,8 @@ class Editor:
             self.gate_list = self.gate_list[:-1]
             self.delete_last = False
 
-    def save(self):
-        map_name = input("Enter map name : ")
-        file_name = "./python/assets/maps/" + map_name
+    def save(self, map_name):
+        file_name = map_name
         f = open(file_name, "a")
         f.write("WALLS\n")
         for w in self.wall_list:
@@ -93,3 +92,4 @@ class Editor:
         (x, y) = self.car_position
         f.write(str(x) + "," + str(y))
         print("You can now close the map window to save your map")
+        f.close()

@@ -1,4 +1,4 @@
-from barrier import Barrier
+from src.main.python.barrier import Barrier
 
 
 class Gate(Barrier):

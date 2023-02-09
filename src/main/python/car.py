@@ -1,5 +1,5 @@
 import pyglet.shapes
-from maths import get_angle, radians_to_angle, vec2
+from src.main.python.maths import get_angle, radians_to_angle, vec2
 
 
 class Car:

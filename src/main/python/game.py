@@ -1,6 +1,6 @@
-from car import Car
-from wall import Wall
-from gate import Gate
+from src.main.python.car import Car
+from src.main.python.wall import Wall
+from src.main.python.gate import Gate
 
 
 class Game:

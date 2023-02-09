@@ -1,5 +1,5 @@
 import pyglet.graphics
-from maths import vec2, lines_collided
+from src.main.python.maths import vec2, lines_collided
 
 
 class Barrier:

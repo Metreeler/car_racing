@@ -1,6 +1,6 @@
 import pyglet
-from game import Game
-from editor import Editor
+from src.main.python.game import Game
+from src.main.python.editor import Editor
 
 
 class MyWindow(pyglet.window.Window):
@@ -60,7 +60,8 @@ class MyWindow(pyglet.window.Window):
                     self.editor.delete_last = True
             elif not self.editor.car:
                 if symbol == pyglet.window.key.ENTER:
-                    self.editor.save()
+                    map_name = input("Enter map name : ")
+                    self.editor.save("./python/assets/maps/" + map_name)
         else:
             if symbol == pyglet.window.key.RIGHT:
                 self.game.car.turning_right = True
