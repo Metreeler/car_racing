@@ -4,7 +4,6 @@ from maths import get_angle, radians_to_angle, vec2
 
 class Car:
     def __init__(self, car_position, wall_list, gate_list):
-        global vec2
         self.wall_list = wall_list
         self.gate_list = gate_list
         (self.x, self.y) = car_position
@@ -23,7 +22,7 @@ class Car:
         self.car_picture = pyglet.image.load("./python/assets/car.png")
         self.car_sprite = pyglet.sprite.Sprite(self.car_picture, x=self.x, y=self.y)
         self.car_sprite.update(rotation=0, scale_x=self.width / self.car_sprite.width,
-                              scale_y=self.height / self.car_sprite.height)
+                               scale_y=self.height / self.car_sprite.height)
         self.turning_left = False
         self.turning_right = False
         self.accelerating = False
@@ -62,13 +61,15 @@ class Car:
             for w in self.wall_list:
                 if w.hit_car(self):
                     self.dead = True
+                    print("Score : " + str(self.score))
+                    print("Press 'r' to start again")
         else:
             self.acc = 0
             self.vel = 0
 
     def check_gate(self, n):
         if self.gate_list[self.gate_count].hit_car(self):
-            self.score += n
+            self.score += 1
             self.gate_count += 1
             self.gate_count = self.gate_count % len(self.gate_list)
             return True
@@ -103,7 +104,6 @@ class Car:
             self.direction = self.direction.rotate(radians_to_angle(self.turning_rate) * multiplier)
 
     def move(self):
-        global vec2
         self.vel += self.acc
         self.vel *= self.friction
         self.constrain_vel()

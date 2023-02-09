@@ -42,6 +42,8 @@ class MyWindow(pyglet.window.Window):
                     self.editor.start_wall_x1 = -1
                     self.editor.start_wall_y1 = -1
                     self.editor.walls = True
+                    print("Now create the gates for the scores "
+                          "(create gates : MOUSE CLICK, delete : BACKSPACE, save : ENTER)")
                 elif symbol == pyglet.window.key.N:
                     self.editor.new_wall = True
                 elif symbol == pyglet.window.key.BACKSPACE:
@@ -53,6 +55,7 @@ class MyWindow(pyglet.window.Window):
                     self.editor.x2 = -1
                     self.editor.y2 = -1
                     self.editor.gates = True
+                    print("Now click on the starting point of the race")
                 elif symbol == pyglet.window.key.BACKSPACE:
                     self.editor.delete_last = True
             elif not self.editor.car:

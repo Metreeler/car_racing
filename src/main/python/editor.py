@@ -21,6 +21,8 @@ class Editor:
         self.start_wall_y1 = -1
         self.new_wall = False
         self.delete_last = False
+        print("Create the walls for the scores "
+              "(create walls : MOUSE CLICK, complete current set of walls : N, delete last : BACKSPACE, save : ENTER)")
 
     def show(self, window_width, window_height):
         line = pyglet.shapes.Line(0, self.mouse_y1, window_width, self.mouse_y1, 1, color=[255, 255, 255])
