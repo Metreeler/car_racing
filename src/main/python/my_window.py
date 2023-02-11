@@ -65,6 +65,7 @@ class MyWindow(pyglet.window.Window):
                     self.editor.delete_last = True
             elif not self.editor.car:
                 if symbol == pyglet.window.key.ENTER:
+                    # Here is an example of the use of higher order function :
                     map_name = input("Enter map name : ").lower()
                     self.editor.save("./python/assets/maps/" + map_name)
         else:

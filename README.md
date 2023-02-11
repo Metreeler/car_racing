@@ -22,6 +22,8 @@ Attached to this project are three UML diagrams :
 
 ## DDD
 
+For this project I created a Driven Domain Design diagram available [here](https://github.com//Metreeler/car_racing/blob/main/deliverables/ddd_diagram.png). This diagram was created considering that I had won 100 millions euros from Edlich-Investment. The company decided that the game was big enough to have its own website and to be available on STEAM. While looking on the internet about DDD I also saw that with DDD comes a ubiquitous language description, so I created an explanation of the ubiquitous language of this project [here](https://github.com//Metreeler/car_racing/blob/main/deliverables/ubiquitous_language.md).
+
 ## Metrics
 
 In order to get some metrics for this project I used SonarCloud which is an online version on SonarQube. SonarQube is a tool to get the metrics of a project such as number of bugs, technical debt, lines of code, etc. SonarCloud allows me to get different metrics and to display the up-to-date version of these metrics thanks to badges.
@@ -96,4 +98,6 @@ The DSL interpreter for this file is located [here](https://github.com//Metreele
 During this project, I tried to use a lot of functional programming. 
 Here are some example : 
 - side effect free functions [here](https://github.com/Metreeler/car_racing/blob/deaae5e6a54e0ab4ad4c7f45abb999c06d5a13f6/src/main/python/maths.py#L9)
+- use of higher-order function [here](https://github.com/Metreeler/car_racing/blob/91546c6c7ad556ce97918aa3ff78b99be23a449b/src/main/python/my_window.py#L68)
+- functions return values [here](https://github.com/Metreeler/car_racing/blob/91546c6c7ad556ce97918aa3ff78b99be23a449b/src/main/python/maths.py#L23)
 

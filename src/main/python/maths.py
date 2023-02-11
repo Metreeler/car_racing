@@ -20,6 +20,7 @@ def lines_collided(x1, y1, x2, y2, x3, y3, x4, y4):
 
 
 # This method is called to get the angle in degrees of a vector compared to a vector (1, 0)
+# This function is an example of a function using a function as a return parameters :
 def get_angle(vec):
     if vec.length() == 0:
         return 0
