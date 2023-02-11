@@ -16,6 +16,8 @@ if __name__ == "__main__":
                 map_name = input("Which map from above do you want to play : ")
                 if map_name not in map_list:
                     print("Not a valid map name, try again")
+            print("Use the directional arrows to move the car around and try to hit as many blue walls as possible !")
+            print("Press UP to go forward and press LEFT and RIGHT to navigate, you can go backward by pressing DOWN")
             playing_editing = False
             window = MyWindow(False, map_name, 1080, 720, "Car Game", resizable=True)
             pyglet.clock.schedule_interval(window.update, 1 / frame_rate)

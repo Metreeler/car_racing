@@ -1,6 +1,10 @@
 # Car racing
 
-This project is a simple 2D car game. The goal is to have a `Map Creator` interface and a `Player` interface. 
+This project is a simple 2D car game. There are two part of this little game, first there is the `Map Creator` part and second there is `Player`. 
+
+When using the `Map Creator` part of this project, it is possible by following the prompted instructions to create a new map for the game.
+
+When using the `Player` part of this project, it is possible to choose a map to play and then to enjoy a futuristic experience of driving.
 
 ---
 ## Use and understand Git
@@ -32,6 +36,13 @@ In order to get some metrics for this project I used SonarCloud which is an onli
 - technical debt : [![Technical Debt](https://sonarcloud.io/api/project_badges/measure?project=Metreeler_car_racing&metric=sqale_index)](https://sonarcloud.io/summary/new_code?id=Metreeler_car_racing)
 
 ## Clean Code Development
+
+During this whole project I tried my best to respect my own clean code ideas that are available on my clean code cheat sheet [here](https://github.com/Metreeler/car_racing/blob/main/deliverables/cheat_sheet_for_clean_code_development.md).
+- Use really clear method function and variable names in order to not get lost (3 in cheat sheet). The names of my variables may seem long but whenever I read them their roles are obvious. Moreover, with the autocompletion of Pycharm it's not even that long to write code. We can see an example of this in the `__init__()` method of the `Car` class [here](https://github.com/Metreeler/car_racing/blob/905af2d7aff6a66d5bb8ae64d44854ce267ec2e8/src/main/python/car.py#L6)
+- Split the large methods into smaller ones whenever it's possible(5 in cheat sheet). This makes debugging way easier. I particularly did that when I created the `update()` function of the `Car` class [here](https://github.com/Metreeler/car_racing/blob/905af2d7aff6a66d5bb8ae64d44854ce267ec2e8/src/main/python/car.py#L56) by having multiple method called in this one. This also avoid side effects or at least makes them easier to spot.
+- Create a function for code needed in multiple places (4 in cheat sheet). That's why my file [maths.py](https://github.com/Metreeler/car_racing/blob/main/src/main/python/maths.py) was created. RIght now all the functions are only used in one place because I needed to clean my code at some point. However, all functions in this file were created with the state of mind "This is a mathematical rule and I might need it again later".
+- Respect the python's convention (6 in cheat sheet). I was really careful to use the right syntax for variable names, method names and class names. We can see for example in the file [editor.py](https://github.com/Metreeler/car_racing/blob/main/src/main/python/editor.py) that the name of the class starts with an uppercase and all variables and methods names are lowercase words.
+- Removing the commented code when it's not used anymore (13 in cheat sheet). I did my best removing the code in comments before I committed my modification to the git but as you can see on this [commit](https://github.com/Metreeler/car_racing/commit/5d48be47a4fd0ce434dccd0573914f3b872c04d8#diff-f4f566c3202c07390491ea3a20bb2f8d88c304ff54138af7d63e91d33741fb8d) there are some time little part of commented code that need to be removed.
 
 ## Build Management
 
@@ -68,7 +79,7 @@ This IDE also analyze the code in real time to tell whether there are errors or 
 
 Pycharm also have an integrated Git interface, which is really intuitive. However, out of habit I still use command lines and a command window.
 
-My favorite shortcuts in this IDE are `Ctrl + /` allowing me to comment multiple line, which is very useful whenever there is a bug in my project. Another one is `Ctrl + Tab` which allows to easily switch between the different tabs opened in the IDE.
+My favorite shortcuts in this IDE are `Ctrl + /` allowing me to comment multiple line, which is very useful whenever there is a bug in my project. Another one is `Ctrl + Tab` which allows to easily switch between the different tabs opened in the IDE. Finally, the best one among all of them is just using `Tab` in order to get autocompletion, it makes me spare a lot of time.
 
 ## DSL
 

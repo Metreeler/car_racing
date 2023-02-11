@@ -15,7 +15,7 @@ class Car:
         self.height = 10
         self.turning_rate = 2.0 / self.width
         self.friction = 0.98
-        self.max_speed = self.width / 2.0
+        self.max_speed = self.width / 3.0
         self.reverse_max_speed = -1 * self.max_speed / 2.0
         self.acceleration_speed = self.width / 160.0
         self.dead = False
@@ -123,29 +123,3 @@ class Car:
             self.vel = self.max_speed
         elif self.vel < self.reverse_max_speed:
             self.vel = self.reverse_max_speed
-
-    def action(self, n):
-        self.turning_left = False
-        self.turning_right = False
-        self.accelerating = False
-        self.reversing = False
-        if n == 0:
-            self.accelerating = True
-        elif n == 1:
-            self.reversing = True
-        elif n == 2:
-            self.accelerating = True
-            self.turning_right = True
-        elif n == 3:
-            self.accelerating = True
-            self.turning_left = True
-        elif n == 4:
-            self.reversing = True
-            self.turning_right = True
-        elif n == 5:
-            self.reversing = True
-            self.turning_left = True
-        elif n == 6:
-            self.turning_right = True
-        elif n == 7:
-            self.turning_left = True
