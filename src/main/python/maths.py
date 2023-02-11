@@ -6,6 +6,8 @@ vec2 = pygame.math.Vector2
 
 
 # This method is called to check if two lines represented by their extremities are colliding
+# This function is an example of a side effect free function as
+# it doesn't modify the inputted values
 def lines_collided(x1, y1, x2, y2, x3, y3, x4, y4):
     v1 = [x2 - x1, y2 - y1]
     v2 = [x4 - x3, y4 - y3]

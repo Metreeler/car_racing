@@ -65,7 +65,7 @@ class MyWindow(pyglet.window.Window):
                     self.editor.delete_last = True
             elif not self.editor.car:
                 if symbol == pyglet.window.key.ENTER:
-                    map_name = input("Enter map name : ")
+                    map_name = input("Enter map name : ").lower()
                     self.editor.save("./python/assets/maps/" + map_name)
         else:
             if symbol == pyglet.window.key.RIGHT:

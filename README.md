@@ -93,3 +93,7 @@ The DSL interpreter for this file is located [here](https://github.com//Metreele
 
 ## Functional Programming
 
+During this project, I tried to use a lot of functional programming. 
+Here are some example : 
+- side effect free functions [here](https://github.com/Metreeler/car_racing/blob/deaae5e6a54e0ab4ad4c7f45abb999c06d5a13f6/src/main/python/maths.py#L9)
+
