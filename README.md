@@ -1,6 +1,8 @@
 # Car racing
 
-This project is a simple 2D car game. There are two part of this little game, first there is the `Map Creator` part and second there is `Player`. 
+This project is a simple 2D car game. There are two part of this little game, first there is the `Map Creator` part and second there is `Player`.
+
+To launch the game, open Pycharm and execute the `src/main/python/main.py` file.
 
 When using the `Map Creator` part of this project, it is possible by following the prompted instructions to create a new map for the game.
 
