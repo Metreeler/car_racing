@@ -4,6 +4,7 @@ from src.main.python.gate import Gate
 
 
 class Game:
+    # Initialization of the Game class
     def __init__(self, map_name):
         self.wall_list = []
         self.gate_list = []
@@ -12,14 +13,17 @@ class Game:
 
         self.car = Car(self.car_position, self.wall_list, self.gate_list)
 
+    # This method is called to display the element of the game
     def show(self):
         self.car.show()
         for w in self.wall_list:
             w.show()
 
+    # This method is called to update the element of the game
     def update(self):
         self.car.update()
 
+    # This method is called during the initialization to load the map and its characteristics
     def load_map(self, map_name):
         self.wall_list = []
         wall_reading = False

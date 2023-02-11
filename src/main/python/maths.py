@@ -5,6 +5,7 @@ import numpy as np
 vec2 = pygame.math.Vector2
 
 
+# This method is called to check if two lines represented by their extremities are colliding
 def lines_collided(x1, y1, x2, y2, x3, y3, x4, y4):
     v1 = [x2 - x1, y2 - y1]
     v2 = [x4 - x3, y4 - y3]
@@ -16,11 +17,13 @@ def lines_collided(x1, y1, x2, y2, x3, y3, x4, y4):
     return False
 
 
+# This method is called to get the angle in degrees of a vector compared to a vector (1, 0)
 def get_angle(vec):
     if vec.length() == 0:
         return 0
     return math.degrees(math.atan2(vec.y, vec.x))
 
 
+# This method is called to convert an angle from radians to angle
 def radians_to_angle(rads):
     return rads * 180 / math.pi

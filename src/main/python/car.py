@@ -3,6 +3,7 @@ from src.main.python.maths import get_angle, radians_to_angle, vec2
 
 
 class Car:
+    # Initialization of the Car class
     def __init__(self, car_position, wall_list, gate_list):
         self.wall_list = wall_list
         self.gate_list = gate_list
@@ -31,6 +32,7 @@ class Car:
         self.score = 0
         self.gate_count = 0
 
+    # This method is called to reset the car
     def reset(self):
         (self.x, self.y) = self.initial_position
         self.vel = 0
@@ -45,6 +47,7 @@ class Car:
         self.gate_count = 0
         self.dead = False
 
+    # This method is called to display the car
     def show(self):
         up_vector = self.direction.rotate(90)
         draw_x = self.direction.x * self.width / 2 + up_vector.x * self.height / 2
@@ -53,6 +56,7 @@ class Car:
         self.car_sprite.draw()
         self.gate_list[self.gate_count].show()
 
+    # This method is called to update the car position, velocity, ...
     def update(self):
         if not self.dead:
             self.update_from_keys()
@@ -67,6 +71,7 @@ class Car:
             self.acc = 0
             self.vel = 0
 
+    # This method is called to check if the car is colliding with the next gate
     def check_gate(self, n):
         if self.gate_list[self.gate_count].hit_car(self):
             self.score += 1
@@ -75,6 +80,7 @@ class Car:
             return True
         return False
 
+    # This method is called to update the parameters of the car depending on the inputs
     def update_from_keys(self):
         self.acc = 0
 
@@ -103,6 +109,7 @@ class Car:
         elif self.turning_left:
             self.direction = self.direction.rotate(radians_to_angle(self.turning_rate) * multiplier)
 
+    # This method is called to set the new position of the car
     def move(self):
         self.vel += self.acc
         self.vel *= self.friction
@@ -118,6 +125,7 @@ class Car:
         self.x += add_vector.x
         self.y += add_vector.y
 
+    # This method is called to constrain the velocity of the car
     def constrain_vel(self):
         if self.vel > self.max_speed:
             self.vel = self.max_speed

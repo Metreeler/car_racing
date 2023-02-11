@@ -4,6 +4,7 @@ import pyglet.graphics
 
 
 class Editor:
+    # Initialization of the Editor class
     def __init__(self):
         self.wall_list = []
         self.gate_list = []
@@ -24,6 +25,7 @@ class Editor:
         print("Create the walls for the scores "
               "(create walls : MOUSE CLICK, complete current set of walls : N, delete last : BACKSPACE, save : ENTER)")
 
+    # This method is called to display the element of the editor
     def show(self, window_width, window_height):
         line = pyglet.shapes.Line(0, self.mouse_y1, window_width, self.mouse_y1, 1, color=[255, 255, 255])
         line.draw()
@@ -38,6 +40,7 @@ class Editor:
             circle = pyglet.shapes.Circle(x, y, 10, color=(50, 225, 30))
             circle.draw()
 
+    # This method is called to update the element of the editor
     def update(self):
         if not self.walls:
             if self.new_wall:
@@ -77,6 +80,7 @@ class Editor:
             self.gate_list = self.gate_list[:-1]
             self.delete_last = False
 
+    # This method is called to save the element of the editor in a file
     def save(self, map_name):
         file_name = map_name
         f = open(file_name, "a")

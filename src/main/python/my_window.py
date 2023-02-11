@@ -3,7 +3,9 @@ from src.main.python.game import Game
 from src.main.python.editor import Editor
 
 
+# This class derives from the pyglet window
 class MyWindow(pyglet.window.Window):
+    # This method initialize the window while being careful if we are in editor mode or if we are in player mode
     def __init__(self, editing, map_name, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.set_minimum_size(400, 300)
@@ -15,6 +17,7 @@ class MyWindow(pyglet.window.Window):
         else:
             self.game = Game(map_name)
 
+    # This method is called on every frame to display chat is needed
     def on_draw(self):
         self.background.draw()
         if self.editing:
@@ -22,6 +25,7 @@ class MyWindow(pyglet.window.Window):
         else:
             self.game.show()
 
+    # This method is called whenever to update the game or the editor
     def update(self, dt):
         if (self.window_width, self.window_height) != self.get_size():
             (self.window_width, self.window_height) = self.get_size()
@@ -31,6 +35,7 @@ class MyWindow(pyglet.window.Window):
         else:
             self.game.update()
 
+    # This method is called everytime a key is pressed
     def on_key_press(self, symbol, modifiers):
         if self.editing:
             if not self.editor.walls:
@@ -76,6 +81,7 @@ class MyWindow(pyglet.window.Window):
             if symbol == pyglet.window.key.R:
                 self.game.car.reset()
 
+    # This method is called everytime a key is released
     def on_key_release(self, symbol, modifiers):
         if not self.editing:
             if symbol == pyglet.window.key.RIGHT:
@@ -89,6 +95,7 @@ class MyWindow(pyglet.window.Window):
             if symbol == pyglet.window.key.SPACE:
                 self.game.car.stop = False
 
+    # This method is called everytime the mouse is pressed
     def on_mouse_press(self, x, y, button, modifiers):
         if self.editing:
             if self.editor.x1 == -1 and self.editor.y1 == -1:
@@ -98,6 +105,7 @@ class MyWindow(pyglet.window.Window):
                 self.editor.x2 = x
                 self.editor.y2 = y
 
+    # This method is called everytime the mouse is moved
     def on_mouse_motion(self, x, y, dx, dy):
         if self.editing:
             self.editor.mouse_x1 = x

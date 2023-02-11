@@ -6,6 +6,7 @@ from src.main.python.gate import Gate
 
 
 class EditorTest(unittest.TestCase):
+    # This method is called to test the good initialization of the editor class
     def test_editor_initialization(self):
         editor = Editor()
         self.assertEqual(len(editor.wall_list), 0)
@@ -26,6 +27,7 @@ class EditorTest(unittest.TestCase):
         self.assertFalse(editor.delete_last)
         del editor
 
+    # This method is called to test the save method of the editor class
     def test_editor_save_method(self):
         editor = Editor()
         editor.wall_list.append(Wall(0, 0, 5, 5))
