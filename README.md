@@ -5,6 +5,7 @@ This project is a simple 2D car game. There are two part of this little game, fi
 When using the `Map Creator` part of this project, it is possible by following the prompted instructions to create a new map for the game.
 
 When using the `Player` part of this project, it is possible to choose a map to play and then to enjoy a futuristic experience of driving.
+![game_image](https://github.com//Metreeler/car_racing/blob/main/deliverables/game.png)
 
 ---
 ## Use and understand Git

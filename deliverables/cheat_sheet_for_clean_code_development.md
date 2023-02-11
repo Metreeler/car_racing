@@ -105,7 +105,7 @@ THe comments don't need to be to precise but at least help understand what is go
 ## 9 - Using libraries is good, understanding them is better
 
 Sometimes, when using a library, it is really nice because it does exactly what you want. However, when using multiple libraries there are sometimes conflicts between them and trying to get a solution to find a solution can be really tedious.
-That's why I try my best to be sure to understand how the library works, whenever I use a method, I want to be sure I understand all the parameters and there are corresponding to.
+That's why I try my best to be sure to understand how the library works, whenever I use a method, I want to be sure I understand all the parameters and what there are corresponding to.
 For example I once used two different libraries to manipulate images (pyglet and opencv) and I told myself that linking both together wouldn't be difficult... After three hours of raging against my computer I finally discovered the x and y axis on one library were inverted compared to the other library and that's why my code was not working...
 
 ## 10 - Do not hesitate to comment huge chunk of the code
