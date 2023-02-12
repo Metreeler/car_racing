@@ -72,7 +72,7 @@ class Car:
             self.vel = 0
 
     # This method is called to check if the car is colliding with the next gate
-    def check_gate(self, n):
+    def check_gate(self):
         if self.gate_list[self.gate_count].hit_car(self):
             self.score += 1
             self.gate_count += 1

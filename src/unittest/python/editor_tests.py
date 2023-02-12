@@ -33,7 +33,8 @@ class EditorTest(unittest.TestCase):
         editor.wall_list.append(Wall(0, 0, 5, 5))
         editor.gate_list.append(Gate(10, 10, 5, 5))
         editor.car_position = (20, 20)
-        editor.save("./assets/maps/map_for_test_editor")
+        file_path = "./assets/maps/map_for_test_editor"
+        editor.save(file_path)
         f = open("./assets/maps/map_for_test_editor", "r")
         lines = []
         for line in f:
@@ -46,7 +47,7 @@ class EditorTest(unittest.TestCase):
         self.assertEqual(lines[5], "20,20")
         del editor
         f.close()
-        os.remove("./assets/maps/map_for_test_editor")
+        os.remove(file_path)
 
 
 if __name__ == '__main__':
